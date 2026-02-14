@@ -10,7 +10,7 @@ class Animal {
 
         echo "<hr><br>";
         if (gettype($parametro)) {
-            echo "EL PARAMETRO EXISTE y es de tipo".gettype($parametro);
+            echo "EL PARAMETRO EXISTE y es de tipo ".gettype($parametro);
         }
 
         echo sprintf("<div>Animal %s</div>", $this->name);
