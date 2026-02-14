@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML Starter — oop</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="js/script.js"></script>
+    <style>
+        footer {
+            background-color: red;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>HTML Starter</h1>
+            <div class="actions">
+                <button id="toggleTheme">Toggle theme</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h2>Welcome</h2>
+            <p>This is a minimal HTML/CSS/JS starter you can drop into <code>c:/xampp/htdocs/html/oop</code> and open in a browser or serve with XAMPP.</p>
+            <p>Try the form below to see a tiny JS interaction.</p>
+        </section>
+
+        <section class="demo">
+            <form id="sampleForm">
+                <label for="name">Your name</label>
+                <input id="name" name="name" type="text" placeholder="Type your name" required />
+                <button type="submit">Say hello</button>
+            </form>
+
+            <div id="message" aria-live="polite" class="message"></div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <small>Place this folder in XAMPP's htdocs to serve locally (http://localhost/html/oop/).</small>
+        </div>
+    </footer>
+</body>
+</html>
