@@ -1,48 +1,61 @@
 <?php
 
-class Animal {
-    function __construct($name=NULL , $food=NULL) {
-        $this->name = $name ?: "UNNAMED";
-        $this->food = $food ?: "UNDEFINED";
-    }
+include 'model.php';
+include 'controller.php';
+include 'view.php';
 
-    function render($parametro=NULL) {
+error_log("\n\nEL USURARIO LLEGA A LA PÁGINA\n");
 
-        echo "<hr><br>";
-        if (gettype($parametro)) {
-            echo "EL PARAMETRO EXISTE y es de tipo ".gettype($parametro);
-        }
+$uuid = uniqid();
+$model = new Model($uuid);
+$controller = new Controller($model, $uuid);
+$view = new View($controller, $model, $uuid);
 
-        echo sprintf("<div>Animal %s</div>", $this->name);
-        if ($parametro !== NULL) {
-            echo sprintf("<div>mote: %s</div>", $parametro);
-        }
-    }
 
-    function eat() {
-        echo sprintf("<div>%s come %s</div>", $this->name, $this->food);
-    }
+if (isset($_GET['click']) && !empty($_GET['click'])) {
+    $controller->clicked($_GET['click']);
 }
 
+echo $view->output();
 
-$animales = [
-    new Animal("Toby", "Pienso"),
-    new Animal("Misifú", "Ratones"),
-    new Animal("Paco")
-];
 
-shuffle($animales);
 
-foreach ($animales as $animal) {
-    $animal->render($animal->name == "Misifú");
-    $animal->eat();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+$wait = 3;
+error_log("Hacemos cositas en el main (".$wait." segundos...)");
+for ($i = 0; $i <=$wait; $i++)
+{
+    sleep(1);
 }
+error_log("\nFIN DEL MAIN");
 
-echo "<br><br><br>";
-echo "<hr><hr><hr>";
-echo "<br><br><br>";
-
-for ($i = 0; $i < sizeof($animales); $i++) {
-    $animales[$i]->render($animales[$i]->name == "Misifú");
-    $animales[$i]->eat();
+while(TRUE)
+{
+    sleep(1);
+    error_log("Keep alive");
 }
+*/
