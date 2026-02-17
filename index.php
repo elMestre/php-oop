@@ -32,5 +32,28 @@
             include 'main.php';
         ?>
 
+        <form action="#" method="post">
+
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <br><br>
+
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" id="cantidad" name="cantidad" min="0" required>
+            <br><br>
+
+            <span>¿Activo?</span><br>
+            <input type="radio" id="si" name="activo" value="si" required>
+            <label for="si">Sí</label>
+
+            <input type="radio" id="no" name="activo" value="no">
+            <label for="no">No</label>
+            <br><br>
+
+            <button type="submit">Enviar</button>
+
+        </form>
+
+
     </main>
 </html>
